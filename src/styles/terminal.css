@@ -1,0 +1,149 @@
+:root {
+  --terminal-bg: #1a1b26;
+  --terminal-text: #a9b1d6;
+  --terminal-prompt: #7aa2f7;
+  --terminal-selection: #3d59a1;
+  --terminal-cursor: #c0caf5;
+  --terminal-green: #9ece6a;
+  --terminal-yellow: #e0af68;
+  --terminal-red: #f7768e;
+  --terminal-blue: #7aa2f7;
+}
+
+.terminal-container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: 'MesloLGS NF', 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.terminal-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-container::-webkit-scrollbar-track {
+  background: var(--terminal-bg);
+}
+
+.terminal-container::-webkit-scrollbar-thumb {
+  background: #3d59a1;
+  border-radius: 4px;
+}
+
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-prompt-icon {
+  color: var(--terminal-prompt);
+  margin-right: 8px;
+}
+
+.terminal-prompt-path {
+  color: var(--terminal-green);
+  margin-right: 8px;
+}
+
+.terminal-prompt-git {
+  color: var(--terminal-blue);
+  margin-right: 8px;
+}
+
+.terminal-prompt-arrow {
+  color: var(--terminal-yellow);
+}
+
+.terminal-output-container {
+  padding-left: 24px;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: flex-start;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--terminal-text);
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+.terminal-input:focus {
+  outline: none;
+}
+
+.terminal-output-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-output-error {
+  color: var(--terminal-red);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-output-success {
+  color: var(--terminal-green);
+}
+
+.terminal-command-history {
+  color: var(--terminal-text);
+  opacity: 0.7;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: var(--terminal-cursor);
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+.terminal-container ::selection {
+  background-color: var(--terminal-selection);
+  color: var(--terminal-text);
+}
+
+.terminal-history-line {
+  display: flex;
+  align-items: flex-start;
+  font-family: inherit;
+}
+
+.terminal-command-text {
+  margin-left: 8px;
+  color: var(--terminal-text);
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.terminal-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.terminal-outputs {
+  display: flex;
+  flex-direction: column;
+}
